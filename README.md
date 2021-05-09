@@ -7,7 +7,7 @@ Dingo is an indoor mobile robot that can be configured for differential-drive, o
 You can find more information about Dingo at the [Clearpath Robotics](https://clearpathrobotics.com/dingo-indoor-mobile-robot/) website.
 
 
-## Hardware overview
+## Hardware Overview
 
 We mounted the Raspberry Pi 4 on the outside of the Dingo.
 We conisdered this an advantage for the applications that want a low cost computer for Dingo.
@@ -58,9 +58,9 @@ A STEP214 model of this bracket is included in this repository as 024011-GEO_1.S
 
 
 
-### Installation Guide
+### Hardware Installation Guide
 
-These steps assume you have already printed the Pi's mounting bracket ( 024011 ), made the Pi's power cable ( 024056 ), and collected the parts and tools mentioned earlier.
+These steps assume you have already printed the Pi's mounting bracket ( 024011 ), made the Pi's power cable ( 024056 ), and collected the parts and tools mentioned earlier.
 
 0. Make sure your Dingo is turned off.
 1. Remove the four round-head screws at the rear of the Dingo's trough cover.
@@ -71,7 +71,8 @@ These steps assume you have already printed the Pi's mounting bracket ( 024011 )
 6. Remove the Dingo rear trough cover's four flat-head screws.
 7. Remove the Dingo's rear trough cover.
 8. Connect the ethernet cable ( 021758 ) to the Dingo's MCU circuit board. 
-9. Connect the power cable ( 024056 ) to the *PWR1* jack of the Dingo's MCU circuit board. This is a white jack in the centre of the circui board.
+<img src="/images/dingo-mcu.png" alt="Image of dingo MCU" width="600" >
+9. Connect the power cable ( 024056 ) to the *PWR1* jack of the Dingo's MCU circuit board. This is a white jack in the centre of the circuit board.
 10. Place the trough cover on the Dingo. The ethernet and power cable should pass through the trough cover's semi-circle cutout, so you can access the cables after fastening the cover.
 11. Install four flat-head screws ( from step 6 ) into the trough cover.
 12. Connect the power cable to the Raspberry Pi's USB type-C jack.
@@ -79,4 +80,52 @@ These steps assume you have already printed the Pi's mounting bracket ( 024011 )
 
 
 
+## Software Overview
+
+We tested our Raspeberry Pi Dingo with Ubuntu server Bionic arm64.
+Canonical will support this Raspberry Pi operating system until 2023.
+
+
+
+### OS installation onto Pi
+1. From your development computer, download [Ubuntu Bionic Raspberry Pi 3 (64-bit ARM)](http://cdimage.ubuntu.com/ubuntu/releases/18.04/release/ubuntu-18.04.5-preinstalled-server-arm64+raspi3.img.xz)
+   You can see the similar images from Canonical [here](http://cdimage.ubuntu.com/ubuntu/releases/18.04/release/)
+2. From your development computer, download and install [Raspberry Pi Imager](https://www.raspberrypi.org/software/)
+3. Insert a 16 GB or larger microSD card into your development computer. We suggest the 64 GB card included in the parts list since this has sufficient speed, and additional storage for rosbags.
+4. From your development computer, launch the Raspberry Pi Imager application.
+5. In the Raspberry Pi Imager application:
+   * Click *Operating System*
+   * Select *Use custom* at the bottom of the OS list.
+   * Select the OS downloaded in step 1. 
+   * Clcik *Storage*
+   * Select your micro SD in the storage options. 
+   * Click 'Write'
+<img src="/images/pi-imager-1.png" alt="Image of Pi imager 1" width="600" >
+
+<img src="/images/pi-imager-2.png" alt="Image of Pi imager 2" width="600" >
+
+<img src="/images/pi-imager-3.png" alt="Image of Pi imager 3" width="600" >
+
+6. After the Raspberry Pi Imager finishes writing; remove the microSD card from your development computer.
+7. Insert the microSD card into your Raspberry Pi 4.
+8. Connect the following cables and then connect power to the Raspberry Pi:
+   * RJ45 ethernet to an internet connection
+   * HDMI to a monitor
+   * USB keyboard
+   * USB type-C power ( 3 A at 5 V )
+9. Once the Pi has booted, enter the username and password:
+   *username: *ubuntu*
+   *password: *ubuntu*
+   *new password *choose a password*
+10. Find the IP address of your Raspberry Pi:
+   *ifconfig *
+11. From a terminal on your developement computer, SSH into the Pi:
+   *ssh ubuntu@xxx.xxx.xxx.xxx*
+   note: the Pi and your development computer will need to be on the same local-area-network.
+
+
+### ROS installation
+12. On your development computer's terminal, through SSH:
+   *wget -c https://raw.githubusercontent.com/clearpathrobotics/ros_computer_setup/main/install.sh && bash install.sh*
+   note: this script is desribed [Clearpath ros_computer_setup](https://github.com/clearpathrobotics/ros_computer_setup)
 
