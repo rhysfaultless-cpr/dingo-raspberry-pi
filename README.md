@@ -114,9 +114,9 @@ Canonical will support this Raspberry Pi operating system until 2023.
    * USB keyboard
    * USB type-C power ( 3 A at 5 V )
 9. Once the Pi has booted, enter the username and password:
-   `username: *ubuntu`
-   `password: *ubuntu`
-   `new password *choose a password`
+   `username: *ubuntu* `
+   `password: *ubuntu* `
+   `new password *choose a password* `
 10. Find the IP address of your Raspberry Pi:
    `ifconfig `
 11. From a terminal on your developement computer, SSH into the Pi:
@@ -125,8 +125,8 @@ Canonical will support this Raspberry Pi operating system until 2023.
 
 
 ### ROS installation
-12. On your development computer's terminal, through SSH:
-
-   `wget -c https://raw.githubusercontent.com/clearpathrobotics/ros_computer_setup/main/install.sh && bash install.sh`
+12. On your development computer's terminal, through SSH: <br>
+   `wget -c https://raw.githubusercontent.com/clearpathrobotics/ros_computer_setup/main/install.sh && bash install.sh` <br>
    note: this script is desribed [Clearpath ros_computer_setup](https://github.com/clearpathrobotics/ros_computer_setup)
+13. This script will ask you for the configuration of your Robot. Select Dingo, and Jetson Nano
 
