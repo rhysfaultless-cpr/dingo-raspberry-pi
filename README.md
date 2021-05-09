@@ -14,7 +14,7 @@ We conisdered this an advantage for the applications that want a low cost comput
 The external mounting improves the Pi's WiFi signal, and gives quick access to the Pi's microSD card.
 
 
-## Tools needed
+### Tools needed
 
 You will need these tools:
 
@@ -22,11 +22,23 @@ You will need these tools:
   * Wire stripper
   * Wire cutter
   * Crimper for Molex mini-fit-jr, 18 AWG crimps
-  * Heat gun, for heat shrink tubing
 
 * To attach the Pi to the Dingo
   * Hex key, 3 mm across flats
-  * side cutters / flush cutters, for cable-ties
+
+### Parts to make
+
+Power cable  ( Clearpath Robotics 024056 )
+
+
+| Quantity | CPR item number | Description | Manufacturer | Manufacturer item number | Supplier | Supplier item number |
+| :---: | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | 022206 | Connector, Housing | Molex | 39-01-2045 | Digi-Key | WM23701-ND |
+| 2 | 022252 | Terminal, Crimp | Molex | 40-13-0852 | Digi-Key | WM24935-ND |
+| 1 | 024192 | Cable—Barrel | Tensility | 10-02317 | Digi-Key | 839-1332-ND |
+| 1 | 024193 | Connector, Adapter—USB-C to Barrel Female Ø2.1 X 5.5 | Adafruit | 4536 | Digi-Key | 1528-4536-ND |
+| 1 | 024194 | Connector, Adapter—90° USB-C C USB-C | Adafruit | 4432 | Digi-Key | 1528-4432-ND |
+
 
 
 
