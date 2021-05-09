@@ -35,7 +35,8 @@ You will need these tools:
 | 1 | 024051 | Computer, Single Board—Raspberry Pi 4, 4 GB | Raspberry Pi Foundation | Raspberry Pi 4 Model B, 4 GB | — | — |
 | 1 | 024056 | Cable Assembly—USB-C X Molex | — | — | — | — |
 
-####024056 Cable Assembly—USB-C X Molex 
+
+#### 024056 Cable Assembly—USB-C X Molex 
 (Raspberry Pi 4 Power Cable )
 
 | Quantity | CPR item number | Description | Manufacturer | Manufacturer # | Supplier | Supplier # |
