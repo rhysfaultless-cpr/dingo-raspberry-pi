@@ -113,11 +113,11 @@ Canonical will support this Raspberry Pi operating system until 2023.
    * HDMI to a monitor
    * USB keyboard
    * USB type-C power ( 3 A at 5 V )
-9. Once the Pi has booted, enter the username and password:
-   `username: *ubuntu* `
-   `password: *ubuntu* `
-   `new password *choose a password* `
-10. Find the IP address of your Raspberry Pi:
+9. Once the Pi has booted, enter the username and password: <br>
+   `username: ubuntu ` <br>
+   `password: ubuntu ` <br>
+   `new password choose a password ` <br>
+10. Find the IP address of your Raspberry Pi: <br>
    `ifconfig `
 11. From a terminal on your developement computer, SSH into the Pi:
    `ssh ubuntu@xxx.xxx.xxx.xxx`
