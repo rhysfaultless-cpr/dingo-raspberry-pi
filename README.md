@@ -126,7 +126,7 @@ Canonical will support this Raspberry Pi operating system until 2023.
 
 ### ROS installation
 12. On your development computer's terminal, through SSH:
-   `wget -c https://raw.githubusercontent.com/clearpathrobotics/ros_computer_setup/main/install.sh && bash install.sh`
 
+   `wget -c https://raw.githubusercontent.com/clearpathrobotics/ros_computer_setup/main/install.sh && bash install.sh`
    note: this script is desribed [Clearpath ros_computer_setup](https://github.com/clearpathrobotics/ros_computer_setup)
 
