@@ -114,18 +114,19 @@ Canonical will support this Raspberry Pi operating system until 2023.
    * USB keyboard
    * USB type-C power ( 3 A at 5 V )
 9. Once the Pi has booted, enter the username and password:
-   *username: *ubuntu*
-   *password: *ubuntu*
-   *new password *choose a password*
+   `username: *ubuntu`
+   `password: *ubuntu`
+   `new password *choose a password`
 10. Find the IP address of your Raspberry Pi:
-   *ifconfig *
+   `ifconfig `
 11. From a terminal on your developement computer, SSH into the Pi:
-   *ssh ubuntu@xxx.xxx.xxx.xxx*
+   `ssh ubuntu@xxx.xxx.xxx.xxx`
    note: the Pi and your development computer will need to be on the same local-area-network.
 
 
 ### ROS installation
 12. On your development computer's terminal, through SSH:
-   *wget -c https://raw.githubusercontent.com/clearpathrobotics/ros_computer_setup/main/install.sh && bash install.sh*
+   `wget -c https://raw.githubusercontent.com/clearpathrobotics/ros_computer_setup/main/install.sh && bash install.sh`
+
    note: this script is desribed [Clearpath ros_computer_setup](https://github.com/clearpathrobotics/ros_computer_setup)
 
