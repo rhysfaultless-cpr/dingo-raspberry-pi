@@ -26,19 +26,25 @@ You will need these tools:
 * To attach the Pi to the Dingo
   * Hex key, 3 mm across flats
 
-### Parts to make
+### Parts
+| Quantity | CPR item number | Description | Manufacturer | Manufacturer # | Supplier | Supplier # |
+| :---: | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | 021604 | microSD, 64 GB | Samsung | MB-ME64HA/AM | Amazon | B08879MG33 |
+| 1 | 024011 | Bracket— Raspberry Pi | — | — | — | — |
+| 4 | 024049 | Pin, Push | Westcott | 165841638 | Amazon | B003M5MTWC |
+| 1 | 024051 | Computer, Single Board—Raspberry Pi 4, 4 GB | Raspberry Pi Foundation | Raspberry Pi 4 Model B, 4 GB | — | — |
+| 1 | 024056 | Cable Assembly—USB-C X Molex | — | — | — | — |
 
-Power cable  ( Clearpath Robotics 024056 )
+####024056 Cable Assembly—USB-C X Molex 
+(Raspberry Pi 4 Power Cable )
 
-
-| Quantity | CPR item number | Description | Manufacturer | Manufacturer item number | Supplier | Supplier item number |
+| Quantity | CPR item number | Description | Manufacturer | Manufacturer # | Supplier | Supplier # |
 | :---: | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | 022206 | Connector, Housing | Molex | 39-01-2045 | Digi-Key | WM23701-ND |
 | 2 | 022252 | Terminal, Crimp | Molex | 40-13-0852 | Digi-Key | WM24935-ND |
 | 1 | 024192 | Cable—Barrel | Tensility | 10-02317 | Digi-Key | 839-1332-ND |
 | 1 | 024193 | Connector, Adapter—USB-C to Barrel Female Ø2.1 X 5.5 | Adafruit | 4536 | Digi-Key | 1528-4536-ND |
 | 1 | 024194 | Connector, Adapter—90° USB-C C USB-C | Adafruit | 4432 | Digi-Key | 1528-4432-ND |
-
 
 
 
