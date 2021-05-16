@@ -116,7 +116,7 @@ Canonical will support this Raspberry Pi operating system until 2023.
 9. Once the Pi has booted, enter the username and password: <br>
    `username: ubuntu ` <br>
    `password: ubuntu ` <br>
-   `new password choose a password ` <br>
+   `new password: choose a password ` <br>
 10. Find the IP address of your Raspberry Pi: <br>
    `ifconfig `
 11. From a terminal on your developement computer, SSH into the Pi:
@@ -127,6 +127,58 @@ Canonical will support this Raspberry Pi operating system until 2023.
 ### ROS installation
 12. On your development computer's terminal, through SSH: <br>
    `wget -c https://raw.githubusercontent.com/clearpathrobotics/ros_computer_setup/main/install.sh && bash install.sh` <br>
-   note: this script is desribed [Clearpath ros_computer_setup](https://github.com/clearpathrobotics/ros_computer_setup)
-13. This script will ask you for the configuration of your Robot. Select Dingo, and Jetson Nano
+   Note: this script is desribed [Clearpath ros_computer_setup](https://github.com/clearpathrobotics/ros_computer_setup)
+   This script will ask you for the configuration of your Robot. 
+   Select 2—Dingo, and 3—Jetson Nano.
+
+
+### Network Configuration
+13. Update Network Manager
+   `sudo nano /etc/network/interfaces
+    Change the first line to:
+   `auto lo br0 br0:0
+    And comment out the line:
+   `allow-hotplug br0:0
+14. Add Dingo Omni environment variable:
+   `sudo nano /etc/ros/setup.bash
+    Adding a line to the end of the setup file if using a Dingo Omni, rather than a Dingo Differential:
+   `export DINGO_OMNI=1
+    
+
+### Bluetooth
+This configuration is required if you want to use a Playstation Dualshock controller for controlling your Dingo.
+This is specific to a Raspberry Pi, as the Raspberry Pi Foundation has set UART to controll GPIO pins by default, rather than bluetooth.
+This change to use Dualshock controller will prevent you from using UART on GPIO pins 14 and 15 of your Pi.
+You can review the reasoning described by the Raspberry Pi Foundation's [documentation](https://www.raspberrypi.org/documentation/configuration/uart.md).
+
+15. Install Bluez:
+   `sudo apt-get install bridge-utils ifupdown bluez-tools
+16. Update the Pi's boot configuration to set bluetooth as the primary UART device:
+   `sudo nano /boot/firmware/config.txt
+    Comment out two lines:
+   `#enable_uart=1
+   `#cmdline=nobtcmd.txt
+    And add a line to the end of the file:
+   `dtparam=krnbt=on
+<img src="/images/pi-boot-1.png" alt="Image of Pi boot config 1" width="600" >
+17. `sudo nano /boot/firmware/syscfg.txt
+    Comment out one line:
+   `#include nobtcfg.txt
+    And add a line:
+   `include btcfg.txt
+<img src="/images/pi-boot-2.png" alt="Image of Pi boot config 2" width="600" >
+18. `sudo snap install pi-bluetooth
+19. `sudo apt update && sudo apt upgrade
+20. `sudo reboot now
+
+### Bluetooth Dualshock Controller Pairing
+21. `sudo bluetoothctl
+   `# scan on
+    On the PS4 controller, hold 'SHARE' and the 'PS' button till the top light blinks twice then a pause, repeatedly.
+    Your PS4 controller's address should appear on the termainal. 
+    Mine was 'AE:11:58:60:5F' which you will see in the following steps.
+   `#pair A4:AE:11:58:60:5F
+   `#trust A4:AE:11:58:60:5F
+   `#connect A4:AE:11:58:60:5F
+    You may need to press the PS button on the controller again during the process due to a timeout.
 
