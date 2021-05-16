@@ -162,22 +162,24 @@ You can review the reasoning described by the Raspberry Pi Foundation's [documen
    `dtparam=krnbt=on` <br>
 <img src="/images/pi-boot-1.png" alt="Image of Pi boot config 1" width="600" >
 17. `sudo nano /boot/firmware/syscfg.txt` <br>
-    Comment out one line: 
+    Comment out one line:  <br>
    `#include nobtcfg.txt` <br>
-    And add a line: 
+    And add a line:  <br>
    `include btcfg.txt` <br>
 <img src="/images/pi-boot-2.png" alt="Image of Pi boot config 2" width="600" >
-18. `sudo snap install pi-bluetooth`
-19. `sudo apt update && sudo apt upgrade`
-20. `sudo reboot now`
+
+18. Install bluetooth for Raspberry Pi:
+   `sudo snap install pi-bluetooth`
+19. update and reboot:
+   `sudo apt update && sudo apt upgrade`
+   `sudo reboot now`
 
 ### Bluetooth Dualshock Controller Pairing
-21. `sudo bluetoothctl` <br>
+20. `sudo bluetoothctl` <br>
    `# scan on` <br>
     On the PS4 controller, hold 'SHARE' and the 'PS' button till the top light blinks twice then a pause, repeatedly.
     Your PS4 controller's address should appear on the termainal. 
-    Mine was 'AE:11:58:60:5F' which you will see in the following steps.
-
+    Mine was 'AE:11:58:60:5F' which you will see in the following steps. <br>
    `#pair A4:AE:11:58:60:5F` <br>
    `#trust A4:AE:11:58:60:5F` <br>
    `#connect A4:AE:11:58:60:5F` <br>
