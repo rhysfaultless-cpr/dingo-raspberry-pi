@@ -134,15 +134,15 @@ Canonical will support this Raspberry Pi operating system until 2023.
 
 ### Network Configuration
 13. Update Network Manager
-   `sudo nano /etc/network/interfaces
-    Change the first line to:
-   `auto lo br0 br0:0
-    And comment out the line:
-   `allow-hotplug br0:0
-14. Add Dingo Omni environment variable:
-   `sudo nano /etc/ros/setup.bash
-    Adding a line to the end of the setup file if using a Dingo Omni, rather than a Dingo Differential:
-   `export DINGO_OMNI=1
+   `sudo nano /etc/network/interfaces` <br>
+    Change the first line to: <br>
+   `auto lo br0 br0:0` <br>
+    And comment out the line: <br>
+   `allow-hotplug br0:0` <br>
+14. Add Dingo Omni environment variable: <br>
+   `sudo nano /etc/ros/setup.bash` <br>
+    Adding a line to the end of the setup file if using a Dingo Omni, rather than a Dingo Differential: <br>
+   `export DINGO_OMNI=1` <br>
     
 
 ### Bluetooth
@@ -152,33 +152,33 @@ This change to use Dualshock controller will prevent you from using UART on GPIO
 You can review the reasoning described by the Raspberry Pi Foundation's [documentation](https://www.raspberrypi.org/documentation/configuration/uart.md).
 
 15. Install Bluez:
-   `sudo apt-get install bridge-utils ifupdown bluez-tools
-16. Update the Pi's boot configuration to set bluetooth as the primary UART device:
-   `sudo nano /boot/firmware/config.txt
-    Comment out two lines:
-   `#enable_uart=1
-   `#cmdline=nobtcmd.txt
-    And add a line to the end of the file:
-   `dtparam=krnbt=on
+   `sudo apt-get install bridge-utils ifupdown bluez-tools`
+16. Update the Pi's boot configuration to set bluetooth as the primary UART device: <br>
+   `sudo nano /boot/firmware/config.txt` <br>
+    Comment out two lines: <br>
+   `#enable_uart=1` <br>
+   `#cmdline=nobtcmd.txt` <br>
+    And add a line to the end of the file:` <br>
+   `dtparam=krnbt=on` <br>
 <img src="/images/pi-boot-1.png" alt="Image of Pi boot config 1" width="600" >
-17. `sudo nano /boot/firmware/syscfg.txt
-    Comment out one line:
-   `#include nobtcfg.txt
-    And add a line:
-   `include btcfg.txt
+17. `sudo nano /boot/firmware/syscfg.txt` <br>
+    Comment out one line: 
+   `#include nobtcfg.txt` <br>
+    And add a line: 
+   `include btcfg.txt` <br>
 <img src="/images/pi-boot-2.png" alt="Image of Pi boot config 2" width="600" >
-18. `sudo snap install pi-bluetooth
-19. `sudo apt update && sudo apt upgrade
-20. `sudo reboot now
+18. `sudo snap install pi-bluetooth`
+19. `sudo apt update && sudo apt upgrade`
+20. `sudo reboot now`
 
 ### Bluetooth Dualshock Controller Pairing
-21. `sudo bluetoothctl
-   `# scan on
+21. `sudo bluetoothctl` <br>
+   `# scan on` <br>
     On the PS4 controller, hold 'SHARE' and the 'PS' button till the top light blinks twice then a pause, repeatedly.
     Your PS4 controller's address should appear on the termainal. 
     Mine was 'AE:11:58:60:5F' which you will see in the following steps.
-   `#pair A4:AE:11:58:60:5F
-   `#trust A4:AE:11:58:60:5F
-   `#connect A4:AE:11:58:60:5F
-    You may need to press the PS button on the controller again during the process due to a timeout.
 
+   `#pair A4:AE:11:58:60:5F` <br>
+   `#trust A4:AE:11:58:60:5F` <br>
+   `#connect A4:AE:11:58:60:5F` <br>
+    You may need to press the PS button on the controller again during the process due to a timeout.
